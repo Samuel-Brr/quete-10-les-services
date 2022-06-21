@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map, tap } from 'rxjs';
 import { Cocktail } from '../models/cocktail.model';
 import { CocktailService } from '../services/cocktail.service';
 
@@ -9,16 +10,20 @@ import { CocktailService } from '../services/cocktail.service';
 })
 export class CocktailListComponent implements OnInit {
 
-  cocktails: Cocktail[]
+  cocktails: Cocktail[] = []
 
   constructor(private cocktailService: CocktailService) {
 
-    this.cocktails = cocktailService.getCocktails
+    cocktailService.getCocktails
+      .pipe(
+        tap(cocktails => this.cocktails = cocktails)
+      )
+      .subscribe()
 
    }
 
   ngOnInit(): void {
-    console.log(this.cocktails)
+    console.log("MA LISTE", this.cocktails)
   }
 
 }

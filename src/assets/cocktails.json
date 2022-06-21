@@ -1,0 +1,11 @@
+{
+  "payload": {
+
+    "0": {"_name": "Daiquiri", "_price": 15, "_img": "#"},
+    "1": {"_name": "Mojito", "_price": 12, "_img": "#"},
+    "2": {"_name": "Pinacolada", "_price": 16, "_img": "#"},
+    "3": {"_name": "Ti punch", "_price": 9, "_img": "#"}
+
+  }
+
+}
